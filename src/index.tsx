@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import { BrowserRouter } from "react-router-dom";
 import { RecoilRoot } from "recoil";
 import App from "./App";
+import PageTemplate from "./components/common/PageTemplate";
 import { GlobalStyle } from "./styles/GlobalStyle";
 
 const root = ReactDOM.createRoot(
@@ -17,8 +18,10 @@ root.render(
     <QueryClientProvider client={queryClient}>
       <RecoilRoot>
         <BrowserRouter>
-          <GlobalStyle />
-          <App />
+          <PageTemplate>
+            <GlobalStyle />
+            <App />
+          </PageTemplate>
         </BrowserRouter>
       </RecoilRoot>
     </QueryClientProvider>
