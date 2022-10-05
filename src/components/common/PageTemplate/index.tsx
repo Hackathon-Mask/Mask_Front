@@ -9,10 +9,8 @@ interface Props {
 const PageTemplate = ({ children }: Props) => {
   return (
     <PageTemplateContainer>
-      <PageTemplateWrap>
-        <NavBar />
-        {children}
-      </PageTemplateWrap>
+      <NavBar />
+      <PageTemplateWrap>{children}</PageTemplateWrap>
     </PageTemplateContainer>
   );
 };
