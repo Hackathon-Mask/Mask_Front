@@ -1,10 +1,14 @@
 export const NAV_BAR_TAB_ITEMS = [
   {
-    title: "궁금해요!",
+    title: "에스크 보기",
     link: "/",
   },
   {
-    title: "질문 작성",
+    title: "에스크 작성",
     link: "/write",
+  },
+  {
+    title: "학생 목록",
+    link: "/list",
   },
 ];
