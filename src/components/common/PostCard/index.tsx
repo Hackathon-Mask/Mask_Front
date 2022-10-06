@@ -1,4 +1,4 @@
-import { Post } from "../../../types/post/post.type";
+import { VisiblePost } from "../../../types/post/post.type";
 import {
   PostCardContainer,
   PostCardContentCuriousityCountIcon,
@@ -17,19 +17,21 @@ import {
 import { FaQuestion } from "@react-icons/all-files/fa/FaQuestion";
 
 interface Props {
-  data: Post;
+  data: VisiblePost;
 }
 
 const PostCard = ({ data }: Props) => {
   return (
     <PostCardContainer>
-      <PostCardImg src={data.title_image} />
+      <PostCardImg src={data.titleImage} />
       <PostCardContentWrap>
         <PostCardContentTitle>{data.title}</PostCardContentTitle>
         <PostCardContentSummary>{data.summary}</PostCardContentSummary>
 
         <PostCardContentFieldLabelWrap>
-          <PostCardContentFieldLabel>{data.field}</PostCardContentFieldLabel>
+          <PostCardContentFieldLabel>
+            {data.majorTag.name}
+          </PostCardContentFieldLabel>
           <PostCardContentFieldLabelOverlay />
         </PostCardContentFieldLabelWrap>
         <PostCardContentCuriousityCountWrap>

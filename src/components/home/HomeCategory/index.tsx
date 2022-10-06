@@ -1,19 +1,22 @@
 import { useRecoilState } from "recoil";
-import { POST_FIELDS } from "../../../constants/post/post.constant";
+import { useGetMajors } from "../../../quries/post/post.query";
 import { homeCategoryAtom } from "../../../store/home/home.store";
 import { HomeCategoryContainer, HomeCategoryText } from "./style";
 
 const HomeCategory = () => {
   const [category, setCategory] = useRecoilState(homeCategoryAtom);
 
+  const { data: majorData } = useGetMajors();
+
   return (
     <HomeCategoryContainer>
-      {POST_FIELDS.map((item) => (
+      {majorData?.tags.map((item) => (
         <HomeCategoryText
-          isSelect={category === item}
+          isSelect={category.id === item.id}
           onClick={() => setCategory(item)}
+          key={item.id}
         >
-          {item}
+          {item.name}
         </HomeCategoryText>
       ))}
     </HomeCategoryContainer>

@@ -1,7 +1,10 @@
 import { atom } from "recoil";
-import { POST_FIELDS } from "../../constants/post/post.constant";
+import { PostMajor } from "../../types/post/post.type";
 
-export const homeCategoryAtom = atom<string>({
+export const homeCategoryAtom = atom<PostMajor>({
   key: "home/homeCategoryAtom",
-  default: POST_FIELDS[0],
+  default: {
+    id: 1,
+    name: "Backend",
+  },
 });
