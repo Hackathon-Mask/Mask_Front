@@ -15,6 +15,7 @@ import {
 } from "./style";
 
 import { FaQuestion } from "@react-icons/all-files/fa/FaQuestion";
+import React from "react";
 
 interface Props {
   data: VisiblePost;
@@ -23,14 +24,14 @@ interface Props {
 const PostCard = ({ data }: Props) => {
   return (
     <PostCardContainer>
-      <PostCardImg src={data.titleImage} />
+      <PostCardImg src={data.title_image} />
       <PostCardContentWrap>
         <PostCardContentTitle>{data.title}</PostCardContentTitle>
         <PostCardContentSummary>{data.summary}</PostCardContentSummary>
 
         <PostCardContentFieldLabelWrap>
           <PostCardContentFieldLabel>
-            {data.majorTag.name}
+            {data.major_tag.name}
           </PostCardContentFieldLabel>
           <PostCardContentFieldLabelOverlay />
         </PostCardContentFieldLabelWrap>
@@ -49,4 +50,4 @@ const PostCard = ({ data }: Props) => {
   );
 };
 
-export default PostCard;
+export default React.memo(PostCard);

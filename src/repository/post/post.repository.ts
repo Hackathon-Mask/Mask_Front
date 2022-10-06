@@ -1,6 +1,10 @@
 import { customAxios } from "../../lib/axios";
-import { MajorsResponse, SkillsResponse } from "../../types/post/post.type";
-import { postWriteParams } from "./post.param";
+import {
+  MajorsResponse,
+  PostsResponse,
+  SkillsResponse,
+} from "../../types/post/post.type";
+import { getPostsParams, postWriteParams } from "./post.param";
 
 class PostRepository {
   public async getSkills(): Promise<SkillsResponse> {
@@ -10,6 +14,17 @@ class PostRepository {
 
   public async getMajors(): Promise<MajorsResponse> {
     const { data } = await customAxios.get("/tags/majors");
+    return data;
+  }
+
+  public async getPosts({
+    majorTagId,
+    queryType,
+  }: getPostsParams): Promise<PostsResponse> {
+    const { data } = await customAxios.get(
+      `/questions?majorTagId=${majorTagId}&queryType=${queryType}&keyword=${"Adsasd"}`
+    );
+
     return data;
   }
 

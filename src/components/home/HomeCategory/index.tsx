@@ -1,3 +1,4 @@
+import React from "react";
 import { useRecoilState } from "recoil";
 import { useGetMajors } from "../../../quries/post/post.query";
 import { homeCategoryAtom } from "../../../store/home/home.store";
@@ -23,4 +24,4 @@ const HomeCategory = () => {
   );
 };
 
-export default HomeCategory;
+export default React.memo(HomeCategory);

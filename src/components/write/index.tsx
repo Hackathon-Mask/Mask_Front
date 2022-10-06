@@ -57,7 +57,7 @@ const Write = () => {
         {majors.map((major) => (
           <WriteTag
             onClick={() => onHandleMajor(major)}
-            isSelect={major.id === handleData.majorTag.id}
+            isSelect={major.id === handleData.major_tag}
             key={major.id}
           >
             {major.name}
@@ -72,9 +72,7 @@ const Write = () => {
         {skills.map((skill) => (
           <WriteTag
             isSelect={
-              handleData.skills.find((item) => item.id === skill.id)
-                ? true
-                : false
+              handleData.skills.find((item) => item === skill.id) ? true : false
             }
             key={skill.id}
             onClick={() => onHandleSkill(skill)}
@@ -113,7 +111,7 @@ const Write = () => {
       <WriteWrap>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <WriteInputTitle>대표 이미지</WriteInputTitle>
-          {handleData.titleImage === "" ? (
+          {handleData.title_image === "" ? (
             <>
               <input type="file" id="writeFileInput" onChange={onUploadImage} />
               <WriteFileLabel htmlFor="writeFileInput">
@@ -126,7 +124,7 @@ const Write = () => {
               </WriteFileLabel>
             </>
           ) : (
-            <WriteFileImage src={handleData.titleImage} />
+            <WriteFileImage src={handleData.title_image} />
           )}
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>

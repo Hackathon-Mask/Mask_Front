@@ -8,3 +8,8 @@ export const homeCategoryAtom = atom<PostMajor>({
     name: "Backend",
   },
 });
+
+export const homeSortAtom = atom<string>({
+  key: "home/homeSortAtom",
+  default: "시간순",
+});
