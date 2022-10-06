@@ -1,4 +1,4 @@
-import { Post } from "../../../types/post/post.type";
+import {  VisiblePost } from "../../../types/post/post.type";
 import {
   PostCardContainer,
   PostCardContentCuriousityCountIcon,
@@ -15,21 +15,28 @@ import {
 } from "./style";
 
 import { FaQuestion } from "@react-icons/all-files/fa/FaQuestion";
+import React from "react";
+import { useNavigate } from "react-router-dom";
+
 
 interface Props {
-  data: Post;
+  data: VisiblePost;
 }
 
 const PostCard = ({ data }: Props) => {
+  const navigate = useNavigate();
+
   return (
-    <PostCardContainer>
+    <PostCardContainer onClick={() => navigate(`/read/${data.id}`)}>
       <PostCardImg src={data.title_image} />
       <PostCardContentWrap>
         <PostCardContentTitle>{data.title}</PostCardContentTitle>
         <PostCardContentSummary>{data.summary}</PostCardContentSummary>
 
         <PostCardContentFieldLabelWrap>
-          <PostCardContentFieldLabel>{data.field}</PostCardContentFieldLabel>
+          <PostCardContentFieldLabel>
+            {data.major_tag.name}
+          </PostCardContentFieldLabel>
           <PostCardContentFieldLabelOverlay />
         </PostCardContentFieldLabelWrap>
         <PostCardContentCuriousityCountWrap>
@@ -47,4 +54,4 @@ const PostCard = ({ data }: Props) => {
   );
 };
 
-export default PostCard;
+export default React.memo(PostCard);

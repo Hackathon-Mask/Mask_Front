@@ -7,7 +7,7 @@ export const NavBarContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f7f7f7;
+  background-color: #f7f9fc;
 `;
 export const NavBarWrap = styled.div`
   width: 1320px;
@@ -31,11 +31,11 @@ export const NavBarTabWrap = styled.div`
 export const NavBarTab = styled.div<{ isSelect: boolean }>`
   font-size: 18px;
   cursor: pointer;
-  font-weight: bold;
 
   ${({ isSelect }) =>
     isSelect
       ? css`
+          font-weight: bold;
           color: ${palette.main};
         `
       : css`

@@ -95,7 +95,7 @@ export const PostCardContentCuriousityCountWrap = styled.div`
 export const PostCardContentCuriousityCountIconWrap = styled.div`
   width: 12px;
   height: 12px;
-  background-color: ${palette.main};
+  background-color: #a3a3a3;
   border-radius: 100%;
   display: flex;
   align-items: center;
