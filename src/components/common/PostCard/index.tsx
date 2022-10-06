@@ -16,14 +16,17 @@ import {
 
 import { FaQuestion } from "@react-icons/all-files/fa/FaQuestion";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   data: VisiblePost;
 }
 
 const PostCard = ({ data }: Props) => {
+  const navigate = useNavigate();
+
   return (
-    <PostCardContainer>
+    <PostCardContainer onClick={() => navigate(`/read/${data.id}`)}>
       <PostCardImg src={data.title_image} />
       <PostCardContentWrap>
         <PostCardContentTitle>{data.title}</PostCardContentTitle>

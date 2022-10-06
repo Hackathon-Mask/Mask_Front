@@ -14,6 +14,21 @@ export interface PostSkill {
   name: string;
 }
 
+export interface PostWriter {
+  id: number;
+  name: string;
+}
+
+export interface PostAnswer {
+  id: number;
+  content: string;
+  created_at: string;
+  writer: PostWriter & {
+    major_tag: PostMajor;
+    skills: PostSkill[];
+  };
+}
+
 export interface VisiblePost extends Post {
   readonly id: number;
   readonly created_at: string;
@@ -29,6 +44,13 @@ export interface ApplyPost extends Post {
   major_tag: number;
 }
 
+export interface VisibleSinglePost extends VisiblePost {
+  writer: PostWriter;
+  answers: PostAnswer[];
+  content: string;
+  is_curiousity: boolean;
+}
+
 export interface SkillsResponse {
   tags: PostSkill[];
 }
@@ -40,3 +62,5 @@ export interface MajorsResponse {
 export interface PostsResponse {
   questions: VisiblePost[];
 }
+
+export interface PostResponse extends VisibleSinglePost {}

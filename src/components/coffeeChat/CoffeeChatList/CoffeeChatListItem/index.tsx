@@ -1,3 +1,4 @@
+import { User } from "../../../../types/user/user.type";
 import {
   CoffeeChatListItemBottomWrap,
   CoffeeChatListItemContainer,
@@ -11,37 +12,39 @@ import {
   CoffeeChatListItemSkillTag,
 } from "./style";
 
-const TEST = {
-  name: "임동현",
-  belong: "당근마켓",
-  generation: 6,
-  school: "대구소프트웨어마이스터고",
-  profileImage: "https://avatars.githubusercontent.com/u/79711744?v=4",
-  skills: ["RxJava", "kotlin", "iOS"],
-  major: "BackEnd",
-};
+interface Props {
+  data: User;
+}
 
-const CoffeeChatListItem = () => {
+const CoffeeChatListItem = ({ data }: Props) => {
   return (
     <CoffeeChatListItemContainer>
       <CoffeeChatListItemProfileWrap>
-        <CoffeeChatListItemProfileImg src={TEST.profileImage} />
+        <CoffeeChatListItemProfileImg
+          src={
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI7M4Z0v1HP2Z9tZmfQaZFCuspezuoxter_A&usqp=CAU"
+          }
+        />
         <CoffeeChatListItemProfileTextWrap>
           <CoffeeChatListItemProfileName>
-            {TEST.name}
+            {data.name}
           </CoffeeChatListItemProfileName>
           <CoffeeChatListItemProfileInfoText>
-            {TEST.school} {TEST.generation}기
+            {data.school} {data.generation}기
           </CoffeeChatListItemProfileInfoText>
           <CoffeeChatListItemProfileBelong>
-            {TEST.belong}
+            {data.belong}
           </CoffeeChatListItemProfileBelong>
         </CoffeeChatListItemProfileTextWrap>
       </CoffeeChatListItemProfileWrap>
       <CoffeeChatListItemBottomWrap>
-        <CoffeeChatListItemMajorTag>{TEST.major}</CoffeeChatListItemMajorTag>
-        {TEST.skills.map((skill) => (
-          <CoffeeChatListItemSkillTag>{skill}</CoffeeChatListItemSkillTag>
+        <CoffeeChatListItemMajorTag>
+          {data.majorTag.name}
+        </CoffeeChatListItemMajorTag>
+        {data.skills.map((skill) => (
+          <CoffeeChatListItemSkillTag key={skill.id}>
+            {skill.name}
+          </CoffeeChatListItemSkillTag>
         ))}
       </CoffeeChatListItemBottomWrap>
     </CoffeeChatListItemContainer>

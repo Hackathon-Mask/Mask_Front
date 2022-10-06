@@ -1,13 +1,17 @@
+import { User } from "../../../types/user/user.type";
 import CoffeeChatListItem from "./CoffeeChatListItem";
 import { CoffeeChatListContainer } from "./style";
 
-const CoffeeChatList = () => {
+interface Props {
+  data: User[];
+}
+
+const CoffeeChatList = ({ data }: Props) => {
   return (
     <CoffeeChatListContainer>
-      <CoffeeChatListItem />
-      <CoffeeChatListItem />
-      <CoffeeChatListItem />
-      <CoffeeChatListItem />
+      {data.map((user) => (
+        <CoffeeChatListItem data={user} />
+      ))}
     </CoffeeChatListContainer>
   );
 };

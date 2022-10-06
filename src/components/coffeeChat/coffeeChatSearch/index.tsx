@@ -1,9 +1,9 @@
+import { FiSearch } from "@react-icons/all-files/fi/FiSearch";
 import {
   CoffeeChatSearchContainer,
   CoffeeChatSearchIcon,
   CoffeeChatSearchInput,
 } from "./style";
-import { FiSearch } from "@react-icons/all-files/fi/FiSearch";
 
 const CoffeeChatSearch = () => {
   return (

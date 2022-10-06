@@ -38,7 +38,7 @@ export const HomeControlWrap = styled.div`
 `;
 
 export const HomeSearchWrap = styled.div`
-  width: 926px;
+  width: 917px;
   height: 40px;
   border-radius: 10px;
   background-color: rgba(194, 197, 201, 0.6);
