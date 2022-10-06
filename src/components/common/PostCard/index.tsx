@@ -16,6 +16,8 @@ import {
 } from "./style";
 
 import { FaQuestion } from "@react-icons/all-files/fa/FaQuestion";
+import React from "react";
+
 
 interface Props extends SpaceProps {
   data: Post;
@@ -30,7 +32,9 @@ const PostCard = ({ data, ...styles }: Props) => {
         <PostCardContentSummary>{data.summary}</PostCardContentSummary>
 
         <PostCardContentFieldLabelWrap>
-          <PostCardContentFieldLabel>{data.field}</PostCardContentFieldLabel>
+          <PostCardContentFieldLabel>
+            {data.major_tag.name}
+          </PostCardContentFieldLabel>
           <PostCardContentFieldLabelOverlay />
         </PostCardContentFieldLabelWrap>
         <PostCardContentCuriousityCountWrap>
@@ -48,4 +52,4 @@ const PostCard = ({ data, ...styles }: Props) => {
   );
 };
 
-export default PostCard;
+export default React.memo(PostCard);

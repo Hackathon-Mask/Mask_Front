@@ -8,7 +8,7 @@ export const NAV_BAR_TAB_ITEMS = [
     link: "/write",
   },
   {
-    title: "학생 목록",
-    link: "/list",
+    title: "커피chat",
+    link: "/coffeechat",
   },
 ];

@@ -1,7 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { NAV_BAR_TAB_ITEMS } from "../../../constants/common/common.constant";
 import NavBarProfile from "./NavBarProfile";
-import NavBarSearch from "./NavBarSearch";
 import {
   NavBarContainer,
   NavBarLogo,
@@ -30,7 +29,6 @@ const NavBar = () => {
             </NavBarTab>
           ))}
         </NavBarTabWrap>
-        <NavBarSearch />
         <NavBarProfile />
       </NavBarWrap>
     </NavBarContainer>

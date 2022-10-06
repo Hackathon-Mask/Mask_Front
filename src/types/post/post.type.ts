@@ -1,10 +1,42 @@
 export interface Post {
-  readonly id: number;
   title: string;
   title_image: string;
   summary: string;
-  field: string;
-  curiousity_count: number;
+}
+
+export interface PostMajor {
+  id: number;
+  name: string;
+}
+
+export interface PostSkill {
+  id: number;
+  name: string;
+}
+
+export interface VisiblePost extends Post {
+  readonly id: number;
+  readonly created_at: string;
   answer_count: number;
-  created_at: string;
+  curiousity_count: number;
+  skills: PostSkill[];
+  major_tag: PostMajor;
+}
+
+export interface ApplyPost extends Post {
+  content: string;
+  skills: number[];
+  major_tag: number;
+}
+
+export interface SkillsResponse {
+  tags: PostSkill[];
+}
+
+export interface MajorsResponse {
+  tags: PostMajor[];
+}
+
+export interface PostsResponse {
+  questions: VisiblePost[];
 }
