@@ -1,9 +1,12 @@
+import { useQueryClient } from "react-query";
 import { useRecoilState } from "recoil";
 import { COFFEECHAT_TAB_ITEMS } from "../../../constants/coffeeChat/coffeeChat";
 import { coffeeChatTabAtom } from "../../../store/coffeeChat/coffeeChat.store";
 import { CoffeeChatTabContainer, CoffeeChatTabItem } from "./style";
 
 const CoffeeChatTab = () => {
+  const queryClient = useQueryClient();
+
   const [tab, setTab] = useRecoilState(coffeeChatTabAtom);
 
   return (
@@ -12,7 +15,10 @@ const CoffeeChatTab = () => {
         <CoffeeChatTabItem
           isSelect={tab === item}
           key={item}
-          onClick={() => setTab(item)}
+          onClick={() => {
+            setTab(item);
+            queryClient.invalidateQueries("coffeeChat");
+          }}
         >
           {item}
         </CoffeeChatTabItem>

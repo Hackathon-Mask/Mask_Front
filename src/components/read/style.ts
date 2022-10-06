@@ -101,6 +101,7 @@ export const ReadHeaderProfileInfoWrap = styled.div`
 export const ReadHeaderProfileInfoName = styled.span`
   color: #2b2b2b;
   font-size: 16px;
+  cursor: pointer;
 `;
 
 export const ReadHeaderProfileInfoCreatedAt = styled.span`

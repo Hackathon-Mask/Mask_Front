@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useGetPost } from "../../quries/post/post.query";
 import {
   ReadContainer,
@@ -33,6 +33,8 @@ const Read = () => {
 
   const { data, isLoading } = useGetPost({ questionId: questionid! });
   const [answer, setAnswer] = useRecoilState(readAnswerAtom);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (data) {
@@ -73,7 +75,9 @@ const Read = () => {
                   }
                 />
                 <ReadHeaderProfileInfoWrap>
-                  <ReadHeaderProfileInfoName>
+                  <ReadHeaderProfileInfoName
+                    onClick={() => navigate(`/user/${data?.writer.id}`)}
+                  >
                     {data?.writer.name}
                   </ReadHeaderProfileInfoName>
                   <ReadHeaderProfileInfoCreatedAt>

@@ -11,4 +11,5 @@ export const NavBarProfileContainer = styled.div`
 export const NavBarProfileImg = styled.img`
   width: 100%;
   height: 100%;
+  cursor: pointer;
 `;

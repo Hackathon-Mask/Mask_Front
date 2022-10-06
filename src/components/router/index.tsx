@@ -11,7 +11,8 @@ const Router = () => {
     <Switch>
       <Route path="/" element={<HomePage />} />
       <Route path="/auth" element={<AuthPage />} />
-      <Route path="/mypage" element={<MyPage />} />
+      <Route path="/user" element={<MyPage />} />
+      <Route path="/user/:userid" element={<MyPage />} />
       <Route path="/write" element={<WritePage />} />
       <Route path="/coffeechat" element={<CoffeeChatPage />} />
       <Route path="/read/:questionid" element={<ReadPage />} />

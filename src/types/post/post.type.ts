@@ -64,3 +64,7 @@ export interface PostsResponse {
 }
 
 export interface PostResponse extends VisibleSinglePost {}
+
+export interface MyPostsResponse {
+  questions: VisiblePost[];
+}

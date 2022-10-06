@@ -7,7 +7,4 @@ import { StudentsResponse } from "../../types/user/user.type";
 export const useGetCoffeeChat = ({
   school,
 }: getStudentsParams): UseQueryResult<StudentsResponse, AxiosError> =>
-  useQuery("coffeeChat", () => coffeeChatRepository.getStudents({ school }), {
-    staleTime: 1000 * 60 * 60,
-    cacheTime: 1000 * 60 * 60,
-  });
+  useQuery("coffeeChat", () => coffeeChatRepository.getStudents({ school }));

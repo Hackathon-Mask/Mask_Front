@@ -11,6 +11,7 @@ import {
 import postRepository from "../../repository/post/post.repository";
 import {
   MajorsResponse,
+  MyPostsResponse,
   PostResponse,
   PostsResponse,
   SkillsResponse,
@@ -52,6 +53,9 @@ export const useGetPost = ({
       enabled: !!questionId,
     }
   );
+
+export const useGetMyPosts = (): UseQueryResult<MyPostsResponse, AxiosError> =>
+  useQuery("post/getMyPosts", () => postRepository.getMyPosts());
 
 export const usePostWrite = () => {
   const mutation = useMutation(({ data }: postWriteParams) =>

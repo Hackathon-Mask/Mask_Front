@@ -1,45 +1,65 @@
+import useMyProfile from "../../../hooks/my/useMyProfile";
 import {
-  ProfileAllInfo,
-  ProfileContainer,
-  ProfileImg,
-  ProfileWrap,
-  ProfileLocation,
-  ProfileSkill,
+  MyProfileContainer,
+  MyProfileContentWrap,
+  MyProfileImg,
+  MyProfileInfoLabel,
+  MyProfileInfoRowWrap,
+  MyProfileInfoWrap,
+  MyProfileName,
+  MyProfileSchoolInfoWrap,
+  MyProfileSkillLabel,
+  MyProfileSkillTag,
+  MyProfileSkillWrap,
+  MyProfileWrap,
 } from "./style";
 
 const MyProfile = () => {
+  const { user } = useMyProfile();
+
   return (
-    <>
-      <ProfileContainer>
-        <ProfileWrap>
-          <ProfileImg></ProfileImg>
-          <ProfileAllInfo>
-            <ProfileLocation>
-              <div className="bedgetextwrap">
-                <div className="bedge">소속</div>
-                <p className="text">삼쩜삼</p>
-              </div>
-              <div className="bedgetextwrap">
-                <div className="bedge">학교</div>
-                <p className="text">광주소프트웨어마이스터고 5기</p>
-              </div>
-              <div className="bedgetextwrap">
-                <div className="bedge">동아리</div>
-                <p className="text">themoment</p>
-              </div>
-            </ProfileLocation>
-            <ProfileSkill>
-              <div className="skilwrap">
-                <div className=""></div>
-              </div>
-              <div className="skilwrap">
-                <div className=""></div>
-              </div>
-            </ProfileSkill>
-          </ProfileAllInfo>
-        </ProfileWrap>
-      </ProfileContainer>
-    </>
+    <MyProfileContainer>
+      <MyProfileWrap>
+        <MyProfileImg
+          src={
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI7M4Z0v1HP2Z9tZmfQaZFCuspezuoxter_A&usqp=CAU"
+          }
+        />
+        <MyProfileContentWrap>
+          <MyProfileName>{user?.name}</MyProfileName>
+          <MyProfileInfoWrap>
+            <MyProfileSchoolInfoWrap>
+              <MyProfileInfoRowWrap>
+                <MyProfileInfoLabel>소속</MyProfileInfoLabel>
+                {user?.belong}
+              </MyProfileInfoRowWrap>
+              <MyProfileInfoRowWrap>
+                <MyProfileInfoLabel>학교</MyProfileInfoLabel>
+                {user?.school} {user?.generation}기
+              </MyProfileInfoRowWrap>
+              <MyProfileInfoRowWrap>
+                <MyProfileInfoLabel>이메일</MyProfileInfoLabel>
+                {user?.email}
+              </MyProfileInfoRowWrap>
+            </MyProfileSchoolInfoWrap>
+            <MyProfileSkillWrap>
+              <MyProfileInfoRowWrap>
+                <MyProfileSkillLabel>분야</MyProfileSkillLabel>
+                <MyProfileSkillTag>{user?.major_tag?.name}</MyProfileSkillTag>
+              </MyProfileInfoRowWrap>
+              <MyProfileInfoRowWrap>
+                <MyProfileSkillLabel>기술</MyProfileSkillLabel>
+                {user?.skills.map((skill) => (
+                  <MyProfileSkillTag key={skill.id}>
+                    {skill?.name}
+                  </MyProfileSkillTag>
+                ))}
+              </MyProfileInfoRowWrap>
+            </MyProfileSkillWrap>
+          </MyProfileInfoWrap>
+        </MyProfileContentWrap>
+      </MyProfileWrap>
+    </MyProfileContainer>
   );
 };
 

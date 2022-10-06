@@ -1,12 +1,13 @@
 import MyPagePostList from "./MyPostList";
 import MyProfile from "./MyProfile";
+import { MyContainer } from "./style";
 
 const My = () => {
   return (
-    <>
-      <MyProfile></MyProfile>
+    <MyContainer>
+      <MyProfile />
       <MyPagePostList></MyPagePostList>
-    </>
+    </MyContainer>
   );
 };
 

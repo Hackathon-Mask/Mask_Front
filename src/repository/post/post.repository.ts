@@ -1,6 +1,7 @@
 import { customAxios } from "../../lib/axios";
 import {
   MajorsResponse,
+  MyPostsResponse,
   PostAnswer,
   PostResponse,
   PostsResponse,
@@ -39,6 +40,11 @@ class PostRepository {
 
   public async getPost({ questionId }: getPostParams): Promise<PostResponse> {
     const { data } = await customAxios.get(`/questions/${questionId}`);
+    return data;
+  }
+
+  public async getMyPosts(): Promise<MyPostsResponse> {
+    const { data } = await customAxios.get("/questions/me");
     return data;
   }
 

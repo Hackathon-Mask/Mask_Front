@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router";
 import { User } from "../../../../types/user/user.type";
 import {
   CoffeeChatListItemBottomWrap,
@@ -17,8 +18,10 @@ interface Props {
 }
 
 const CoffeeChatListItem = ({ data }: Props) => {
+  const navigate = useNavigate();
+
   return (
-    <CoffeeChatListItemContainer>
+    <CoffeeChatListItemContainer onClick={() => navigate(`/user/${data.id}`)}>
       <CoffeeChatListItemProfileWrap>
         <CoffeeChatListItemProfileImg
           src={
@@ -39,13 +42,15 @@ const CoffeeChatListItem = ({ data }: Props) => {
       </CoffeeChatListItemProfileWrap>
       <CoffeeChatListItemBottomWrap>
         <CoffeeChatListItemMajorTag>
-          {data.majorTag.name}
+          {data.major_tag.name}
         </CoffeeChatListItemMajorTag>
-        {data.skills.map((skill) => (
-          <CoffeeChatListItemSkillTag key={skill.id}>
-            {skill.name}
-          </CoffeeChatListItemSkillTag>
-        ))}
+        {data.skills
+          .map((skill) => (
+            <CoffeeChatListItemSkillTag key={skill.id}>
+              {skill.name}
+            </CoffeeChatListItemSkillTag>
+          ))
+          .slice(0, 2)}
       </CoffeeChatListItemBottomWrap>
     </CoffeeChatListItemContainer>
   );

@@ -9,7 +9,7 @@ interface Props {
 const CoffeeChatList = ({ data }: Props) => {
   return (
     <CoffeeChatListContainer>
-      {data.map((user) => (
+      {data?.map((user) => (
         <CoffeeChatListItem data={user} />
       ))}
     </CoffeeChatListContainer>

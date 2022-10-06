@@ -1,94 +1,97 @@
 import styled from "styled-components";
+import { palette } from "../../../styles/palette";
 
-export const ProfileContainer = styled.div`
-  float: left;
+export const MyProfileContainer = styled.div`
   width: 100%;
-  height: 250px;
-  border: 2px solid #f1f3f5;
-`;
+  height: 200px;
 
-export const ProfileWrap = styled.div`
-  width: 1000px;
-  height: 250px;
+  padding-bottom: 50px;
+  box-sizing: border-box;
   display: flex;
-  //   background-color: #333;
-  margin: 0 auto;
+  justify-content: center;
+  border-bottom: 1px solid #ececec;
 `;
 
-export const ProfileImg = styled.div`
-  margin: 0 auto;
-  margin-top: 50px;
+export const MyProfileWrap = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+`;
+
+export const MyProfileImg = styled.img`
   width: 150px;
   height: 150px;
-  background-color: #555;
-  border-radius: 50%;
+  border-radius: 100%;
 `;
 
-export const ProfileAllInfo = styled.div`
-padding-top: 25px;
+export const MyProfileContentWrap = styled.div`
   display: flex;
-  width: 700px;
-  height: 100px
-  float: right;
-//   background-color: green;
+  flex-direction: column;
+  margin-left: 60px;
 `;
 
-export const ProfileLocation = styled.div`
-  margin-top: 40px;
-  width: 500px;
-  height: 200px;
-  //   background-color: #555;
-  font-size: 16px;
+export const MyProfileName = styled.h1`
+  font-size: 24px;
   color: #2b2b2b;
-  .bedgetextwrap {
-    display: flex;
-    width: 300px;
-    height: 30px;
-    // background-color: yellow;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-  .bedgetextwrap .bedge {
-    width: 50px;
-    height: 20px;
-    border-radius: 30px;
-    padding-top: 10px;
-    background-color: #0d77f3;
-    text-align: center;
-    margin-bottom: 8px;
-    color: white;
-  }
-  .bedgetextwrap .text {
-    display: block;
-    padding-top: 10px;
-    padding-left: 7px;
-    color: #676666;
-  }
+  font-weight: 700;
+  margin-bottom: 12px;
 `;
 
-export const ProfileSkill = styled.div`
-  width: 300px;
-  height: 200px;
-  //   background-color: #333;
+export const MyProfileInfoWrap = styled.div`
+  display: flex;
 `;
 
-export const ProfileBedge = styled.div`
-  width: 40px;
-  height: 20px;
-  background-color: #0d77f3;
+export const MyProfileSchoolInfoWrap = styled.div`
+  width: 410px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+`;
+
+export const MyProfileInfoRowWrap = styled.div`
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+  color: #676666;
+`;
+
+export const MyProfileInfoLabel = styled.div`
+  height: 25px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  background-color: ${palette.main};
   border-radius: 30px;
-  text-align: center;
-  padding-top: 8px;
-  margin-top: 8px;
   color: white;
-  font-size: 12px;
-  span {
-    font-size: 10px;
-  }
+  padding: 0px 12px;
 `;
 
-export const ProfileBedgeWrap = styled.div`
-  width: 50px;
-  height: 150px;
-  background-color: red;
+export const MyProfileSkillWrap = styled.div`
+  width: 410px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+`;
+
+export const MyProfileSkillLabel = styled.div`
+  background-color: white;
+  border: 1px solid ${palette.main};
+  height: 25px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  border-radius: 30px;
+  padding: 0px 12px;
+  color: ${palette.main};
+`;
+
+export const MyProfileSkillTag = styled.div`
+  background: linear-gradient(100.72deg, #0d76f2 42.04%, #00c2ff 100%);
+  border-radius: 23px;
+  height: 25px;
+  padding: 0px 12px;
+  font-size: 13px;
+  color: white;
+  display: flex;
+  align-items: center;
 `;
