@@ -133,6 +133,7 @@ export const WriteFileLabelIcon = styled.img`
 export const WriteFileImage = styled.img`
   width: 599px;
   height: 100%;
+  max-height: 464px;
   object-fit: cover;
   border-radius: 10px;
 `;

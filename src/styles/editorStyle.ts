@@ -1,4 +1,5 @@
 import { css } from "styled-components";
+import { palette } from "./palette";
 
 export const editorStyle = css`
   .toastui-editor-defaultUI-toolbar {
@@ -17,6 +18,7 @@ export const editorStyle = css`
     h6 {
       border: 0px;
       margin-bottom: 25px;
+      margin-top: 50px;
     }
     h1 {
       font-size: 44px;
@@ -47,6 +49,14 @@ export const editorStyle = css`
     }
     img {
       width: 100%;
+    }
+    blockquote {
+      padding: 16px 24px;
+      border: 1px solid #dbdde5;
+      border-left: 6px solid ${palette.main};
+      line-height: 19px;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
     }
   }
   .toastui-editor-main {

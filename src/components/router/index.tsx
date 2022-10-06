@@ -1,6 +1,7 @@
 import { Routes as Switch, Route } from "react-router-dom";
 import AuthPage from "../../pages/AuthPage";
 import HomePage from "../../pages/HomePage";
+import ReadPage from "../../pages/ReadPage";
 import MyPage from "../../pages/MyPage";
 import CoffeeChatPage from "../../pages/StudentPage";
 import WritePage from "../../pages/WritePage";
@@ -13,6 +14,7 @@ const Router = () => {
       <Route path="/mypage" element={<MyPage />} />
       <Route path="/write" element={<WritePage />} />
       <Route path="/coffeechat" element={<CoffeeChatPage />} />
+      <Route path="/read/:questionid" element={<ReadPage />} />
     </Switch>
   );
 };

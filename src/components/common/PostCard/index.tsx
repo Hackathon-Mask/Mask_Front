@@ -1,5 +1,4 @@
-import { SpaceProps } from "styled-system";
-import { Post } from "../../../types/post/post.type";
+import {  VisiblePost } from "../../../types/post/post.type";
 import {
   PostCardContainer,
   PostCardContentCuriousityCountIcon,
@@ -17,15 +16,18 @@ import {
 
 import { FaQuestion } from "@react-icons/all-files/fa/FaQuestion";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 
-interface Props extends SpaceProps {
-  data: Post;
+interface Props {
+  data: VisiblePost;
 }
 
-const PostCard = ({ data, ...styles }: Props) => {
+const PostCard = ({ data }: Props) => {
+  const navigate = useNavigate();
+
   return (
-    <PostCardContainer {...styles}>
+    <PostCardContainer onClick={() => navigate(`/read/${data.id}`)}>
       <PostCardImg src={data.title_image} />
       <PostCardContentWrap>
         <PostCardContentTitle>{data.title}</PostCardContentTitle>
