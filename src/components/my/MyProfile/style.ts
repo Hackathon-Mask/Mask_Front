@@ -20,7 +20,7 @@ export const ProfileImg = styled.div`
   margin-top: 50px;
   width: 150px;
   height: 150px;
-  //   background-color: #555;
+  background-color: #555;
   border-radius: 50%;
 `;
 
@@ -37,14 +37,12 @@ export const ProfileLocation = styled.div`
   margin-top: 40px;
   width: 500px;
   height: 200px;
-  background-color: #555;
-  font-size: 20px;
+  //   background-color: #555;
+  font-size: 16px;
   color: #2b2b2b;
-  .username {
-  }
   .bedgetextwrap {
     display: flex;
-    width: 250px;
+    width: 300px;
     height: 30px;
     // background-color: yellow;
     margin-top: 10px;

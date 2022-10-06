@@ -15,7 +15,6 @@ const MyProfile = () => {
           <ProfileImg></ProfileImg>
           <ProfileAllInfo>
             <ProfileLocation>
-              dkswlsgud
               <div className="bedgetextwrap">
                 <div className="bedge">소속</div>
                 <p className="text">삼쩜삼</p>
@@ -29,7 +28,14 @@ const MyProfile = () => {
                 <p className="text">themoment</p>
               </div>
             </ProfileLocation>
-            <ProfileSkill></ProfileSkill>
+            <ProfileSkill>
+              <div className="skilwrap">
+                <div className=""></div>
+              </div>
+              <div className="skilwrap">
+                <div className=""></div>
+              </div>
+            </ProfileSkill>
           </ProfileAllInfo>
         </ProfileWrap>
       </ProfileContainer>
