@@ -1,4 +1,4 @@
-import { VisiblePost } from "../../../types/post/post.type";
+import {  VisiblePost } from "../../../types/post/post.type";
 import {
   PostCardContainer,
   PostCardContentCuriousityCountIcon,
@@ -17,6 +17,7 @@ import {
 import { FaQuestion } from "@react-icons/all-files/fa/FaQuestion";
 import React from "react";
 import { useNavigate } from "react-router-dom";
+
 
 interface Props {
   data: VisiblePost;
