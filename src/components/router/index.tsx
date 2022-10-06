@@ -10,7 +10,7 @@ const Router = () => {
       <Route path="/" element={<HomePage />} />
       <Route path="/auth" element={<AuthPage />} />
       <Route path="/write" element={<WritePage />} />
-      <Route path="/coffeecaht" element={<CoffeeChatPage />} />
+      <Route path="/coffeechat" element={<CoffeeChatPage />} />
     </Switch>
   );
 };

@@ -15,6 +15,7 @@ import {
 } from "./style";
 
 import { FaQuestion } from "@react-icons/all-files/fa/FaQuestion";
+import React from "react";
 
 interface Props {
   data: VisiblePost;
@@ -49,4 +50,4 @@ const PostCard = ({ data }: Props) => {
   );
 };
 
-export default PostCard;
+export default React.memo(PostCard);

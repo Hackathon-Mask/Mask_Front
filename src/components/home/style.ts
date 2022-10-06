@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import { palette } from "../../styles/palette";
 
 export const HomeContainer = styled.div`
   display: flex;
@@ -70,13 +71,38 @@ export const HomeSearchInput = styled.input`
   }
 `;
 
-export const HomeSortButton = styled.button`
+export const HomeSortButton = styled.button<{ isSelect: boolean }>`
   width: 40px;
   height: 40px;
-  background-color: #d9d9d9;
   outline: none;
   border: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
+  background: none;
+  padding: 0px;
+  row-gap: 1px;
+
+  ${({ isSelect }) =>
+    isSelect
+      ? css`
+          color: ${palette.main};
+        `
+      : css`
+          color: #9a9a9a;
+        `}
+`;
+
+export const HomeSortButtonIcon = styled.img`
+  width: 14px;
+  object-fit: scale-down;
+`;
+
+export const HomeSortButtonText = styled.span`
+  font-size: 13px;
+  height: 16px;
 `;
 
 export const HomeWrap = styled.div`

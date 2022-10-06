@@ -36,3 +36,7 @@ export interface SkillsResponse {
 export interface MajorsResponse {
   tags: PostMajor[];
 }
+
+export interface PostsResponse {
+  questions: VisiblePost[];
+}
