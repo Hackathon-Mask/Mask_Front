@@ -20,7 +20,7 @@ export const ProfileImg = styled.div`
   margin-top: 50px;
   width: 150px;
   height: 150px;
-  background-color: #555;
+  //   background-color: #555;
   border-radius: 50%;
 `;
 
