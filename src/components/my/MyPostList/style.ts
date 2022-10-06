@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { space } from "styled-system";
 
 export const MyPagePostListContainer = styled.div`
   display: flex;

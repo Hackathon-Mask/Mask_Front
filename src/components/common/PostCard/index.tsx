@@ -1,3 +1,4 @@
+import { SpaceProps } from "styled-system";
 import { Post } from "../../../types/post/post.type";
 import {
   PostCardContainer,
@@ -16,13 +17,13 @@ import {
 
 import { FaQuestion } from "@react-icons/all-files/fa/FaQuestion";
 
-interface Props {
+interface Props extends SpaceProps {
   data: Post;
 }
 
-const PostCard = ({ data }: Props) => {
+const PostCard = ({ data, ...styles }: Props) => {
   return (
-    <PostCardContainer>
+    <PostCardContainer {...styles}>
       <PostCardImg src={data.title_image} />
       <PostCardContentWrap>
         <PostCardContentTitle>{data.title}</PostCardContentTitle>

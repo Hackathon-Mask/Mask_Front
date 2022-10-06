@@ -46,12 +46,12 @@ const MyPagePostList = () => {
     <>
       <MyPagePostListContainer>
         {TEST.map((item) => (
-          <PostCard data={item} />
+          <PostCard margin="10px" data={item} />
         ))}
       </MyPagePostListContainer>
       <MyPagePostListContainer>
         {TEST.map((item) => (
-          <PostCard data={item} />
+          <PostCard margin="10px" data={item} />
         ))}
       </MyPagePostListContainer>
     </>
