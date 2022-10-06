@@ -1,4 +1,5 @@
-import { VisiblePost } from "../../../types/post/post.type";
+import { SpaceProps } from "styled-system";
+import { Post } from "../../../types/post/post.type";
 import {
   PostCardContainer,
   PostCardContentCuriousityCountIcon,
@@ -17,13 +18,14 @@ import {
 import { FaQuestion } from "@react-icons/all-files/fa/FaQuestion";
 import React from "react";
 
-interface Props {
-  data: VisiblePost;
+
+interface Props extends SpaceProps {
+  data: Post;
 }
 
-const PostCard = ({ data }: Props) => {
+const PostCard = ({ data, ...styles }: Props) => {
   return (
-    <PostCardContainer>
+    <PostCardContainer {...styles}>
       <PostCardImg src={data.title_image} />
       <PostCardContentWrap>
         <PostCardContentTitle>{data.title}</PostCardContentTitle>

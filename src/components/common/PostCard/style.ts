@@ -1,8 +1,10 @@
 import styled from "styled-components";
+import { space, SpaceProps } from "styled-system";
 import { ellipsisLine } from "../../../styles/libStyle";
 import { palette } from "../../../styles/palette";
 
-export const PostCardContainer = styled.div`
+export const PostCardContainer = styled.div<SpaceProps>`
+  ${space}
   width: 326px;
   height: 330px;
   position: relative;
