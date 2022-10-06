@@ -37,7 +37,7 @@ export const ProfileLocation = styled.div`
   margin-top: 40px;
   width: 500px;
   height: 200px;
-  //   background-color: #555;
+  background-color: #555;
   font-size: 20px;
   color: #2b2b2b;
   .username {
