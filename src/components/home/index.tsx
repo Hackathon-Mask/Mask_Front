@@ -22,7 +22,6 @@ import { useRecoilState, useRecoilValue } from "recoil";
 import { homeCategoryAtom, homeSortAtom } from "../../store/home/home.store";
 import { useGetPosts } from "../../quries/post/post.query";
 import { postSortModeTransform } from "../../util/transform/dataTransform";
-import { useEffect } from "react";
 
 const Home = () => {
   const [sortMode, setSortMode] = useRecoilState(homeSortAtom);
