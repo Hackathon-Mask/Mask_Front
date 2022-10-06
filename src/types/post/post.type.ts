@@ -1,9 +1,7 @@
 export interface Post {
   title: string;
-  titleImage: string;
+  title_image: string;
   summary: string;
-  majorTag: PostMajor;
-  skills: PostSkill[];
 }
 
 export interface PostMajor {
@@ -21,10 +19,14 @@ export interface VisiblePost extends Post {
   readonly created_at: string;
   answer_count: number;
   curiousity_count: number;
+  skills: PostSkill[];
+  major_tag: PostMajor;
 }
 
 export interface ApplyPost extends Post {
   content: string;
+  skills: number[];
+  major_tag: number;
 }
 
 export interface SkillsResponse {

@@ -1,5 +1,6 @@
 import { Editor } from "@toast-ui/react-editor";
 import React, { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { usePostImage } from "../../quries/image/image.query";
 import {
   useGetMajors,
@@ -11,14 +12,13 @@ import { ApplyPost, PostMajor, PostSkill } from "../../types/post/post.type";
 const useWrite = () => {
   const editorRef = useRef<Editor>(null);
 
+  const navigate = useNavigate();
+
   const [handleData, setHandleData] = useState<ApplyPost>({
     title: "",
-    titleImage: "",
+    title_image: "",
     summary: "",
-    majorTag: {
-      id: 0,
-      name: "",
-    },
+    major_tag: 0,
     content: "",
     skills: [],
   });
@@ -63,6 +63,7 @@ const useWrite = () => {
         { image: formData },
         {
           onSuccess: (data) => {
+            console.log(data.path);
             setHandleData((prev) => ({ ...prev, title_image: data.path }));
           },
         }
@@ -71,7 +72,7 @@ const useWrite = () => {
   };
 
   const onHandleMajor = (item: PostMajor) => {
-    setHandleData((prev) => ({ ...prev, majorTag: item }));
+    setHandleData((prev) => ({ ...prev, major_tag: item.id }));
   };
 
   const onChangeContent = () => {
@@ -85,26 +86,29 @@ const useWrite = () => {
 
   const onHandleSkill = (item: PostSkill) => {
     setHandleData((prev) => {
-      const isOverLap = prev.skills.find((skill) => skill.id === item.id);
+      const isOverLap = prev.skills.find((skill) => skill === item.id);
 
       if (isOverLap) {
         return {
           ...prev,
-          skills: prev.skills.filter((skill) => skill.id !== item.id),
+          skills: prev.skills.filter((skill) => skill !== item.id),
         };
       } else {
-        return { ...prev, skills: [...prev.skills, item] };
+        return { ...prev, skills: [...prev.skills, item.id] };
       }
     });
   };
 
   const onSubmitData = async () => {
-    postWriteMutation.mutateAsync({ data: handleData });
+    postWriteMutation.mutateAsync(
+      { data: handleData },
+      {
+        onSuccess: () => {
+          navigate("/");
+        },
+      }
+    );
   };
-
-  useEffect(() => {
-    console.log(handleData);
-  }, [handleData]);
 
   return {
     handleData,

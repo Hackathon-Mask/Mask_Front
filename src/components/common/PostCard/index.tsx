@@ -23,14 +23,14 @@ interface Props {
 const PostCard = ({ data }: Props) => {
   return (
     <PostCardContainer>
-      <PostCardImg src={data.titleImage} />
+      <PostCardImg src={data.title_image} />
       <PostCardContentWrap>
         <PostCardContentTitle>{data.title}</PostCardContentTitle>
         <PostCardContentSummary>{data.summary}</PostCardContentSummary>
 
         <PostCardContentFieldLabelWrap>
           <PostCardContentFieldLabel>
-            {data.majorTag.name}
+            {data.major_tag.name}
           </PostCardContentFieldLabel>
           <PostCardContentFieldLabelOverlay />
         </PostCardContentFieldLabelWrap>
