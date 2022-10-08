@@ -16,6 +16,9 @@ const useCoffeeChat = () => {
         message: content,
         to_user_id: Number(userid)!,
       });
+
+      window.alert("커피챗 문자가 발송 되었어요!");
+      setContent("");
     } catch (error) {}
   };
 

@@ -8,6 +8,7 @@ import {
   NavBarTabWrap,
   NavBarWrap,
 } from "./style";
+import Logo from "../../../assets/logo/logo.svg";
 
 const NavBar = () => {
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ const NavBar = () => {
   return (
     <NavBarContainer>
       <NavBarWrap>
-        <NavBarLogo alt={"sdasd"} />
+        <NavBarLogo src={Logo} alt={"sdasd"} />
         <NavBarTabWrap>
           {NAV_BAR_TAB_ITEMS.map((item) => (
             <NavBarTab
